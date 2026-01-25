@@ -1,0 +1,22 @@
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+
+#composer
+vendor/
+composer.lock
+
+# congigurations
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+
+# System files
+.DS_Store
+Thumbs.db

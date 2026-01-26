@@ -16,7 +16,11 @@ header span {
 }
 
 form {
+    border: #999 1px solid;
+    border-radius: 6px;
     margin: 24px 0;
+    max-width: 500px;
+    padding: 12px;
 }
 
 form button {
@@ -26,6 +30,7 @@ form button {
     color: #fff;
     font-size: 100%;
     padding: 16px;
+    width: 100%;
 }
 
 form input {
@@ -33,7 +38,15 @@ form input {
     border: #467575 1px solid;
     border-radius: 0;
     font-size: 100%;
+    margin-bottom: 12px;
     padding: 15px;
+    width: 100%;
+}
+
+form label {
+    cursor: pointer;
+    display: block;
+    margin-bottom: 6px;
 }
 
 .albums {

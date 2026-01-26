@@ -18,9 +18,26 @@ $container->set('templating', function () {
     ]);
 });
 
+$container->set('session', function () {
+    return new \SlimSession\Helper();
+});
+
 AppFactory::setContainer($container);
 
 $app = AppFactory::create();
+
+$app->add(new \Slim\Middleware\Session);
+
+$app->any('/login', [\App\Controller\AuthController::class, 'login']);
+$app->get('/logout', [\App\Controller\AuthController::class, 'logout']);
+
+//$app->get('/secure', [\App\Controller\SecureController::class, 'default'])
+//    ->add(new \App\Middleware\Authenticate($app->getContainer()->get('session')));
+
+$app->group('', function ($app) {
+    $app->get('/secure', [\App\Controller\SecureController::class, 'default']);
+    $app->get('/status', [\App\Controller\SecureController::class, 'status']);
+})->add(new \App\Middleware\Authenticate($app->getContainer()->get('session')));;
 
 $app->get('/', [\App\Controller\SearchController::class, 'default']);
 

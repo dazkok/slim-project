@@ -1,0 +1,14 @@
+{{> header.html }}
+
+<h1><a href="/bikes">Back to list</a></h1>
+
+{{#bike}}
+<p class="bike-icon">{{ id }}</p>
+
+<h1>{{ name }}</h1>
+<p>{{ type }} bike</p>
+<p>Weight: {{ weight }}</p>
+<p>Aero: {{ aero }}</p>
+{{/bike}}
+
+{{> footer.html }}

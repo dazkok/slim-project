@@ -1,0 +1,19 @@
+{{> header.html }}
+
+<h1>Albums</h1>
+
+<form action="" method="get">
+    <input type="text" name="q" id="q" aria-label="Search query" value="{{ query }}">
+    <button type="submit">Search</button>
+</form>
+
+<div class="albums">
+    {{#albums}}
+    <div class="">
+        <h2>{{ title }}</h2>
+        <p>{{ artist }}</p>
+    </div>
+    {{/albums}}
+</div>
+
+{{> footer.html }}
